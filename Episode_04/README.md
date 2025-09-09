@@ -15,6 +15,8 @@ Local Execution Context (EC): Created when a function is called, contains local 
 Call Stack: Keeps track of currently executing contexts. LIFO structure (Last In, First Out).
 
 📌 Code Example
+
+```js
 var x = 1;
 
 a();
@@ -31,6 +33,7 @@ function b() {
     var x = 100;
     console.log(x); // 100
 }
+```
 
 📌 Output
 10
@@ -60,3 +63,4 @@ Are local variables the same as global ones? → No, they are separate
 Role of Call Stack? → Track execution contexts
 
 What happens after function execution? → Local EC removed from Call Stack
+
