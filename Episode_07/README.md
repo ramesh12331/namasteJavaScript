@@ -130,13 +130,13 @@ Lexical Environment = Local Memory + Reference to Parent Environment
 
 ## 📌 What is Scope Chain?
 
-ఒక variable ను JS ముందు local scope లో వెతుకుతుంది.
+1. ఒక variable ను JS ముందు local scope లో వెతుకుతుంది.
 
-దొరకకపోతే → parent scope లో వెతుకుతుంది.
+2. దొరకకపోతే → parent scope లో వెతుకుతుంది.
 
-చివరికి కూడా దొరకకపోతే → ReferenceError వస్తుంది.
+3. చివరికి కూడా దొరకకపోతే → ReferenceError వస్తుంది.
 
-ఈ వెతికే process ని Scope Chain అంటారు.
+4. ఈ వెతికే process ని Scope Chain అంటారు.
 
 # 📌 Example 1: Accessing Global Variable
 ```js
@@ -150,6 +150,7 @@ a();
 👉 Function a తన local scope లో b కనుగొనలేక global scope లో వెతికి 10 ప్రింట్ చేసింది.
 
 # 📌 Example 2: Nested Function Accessing Global
+```js
 function a() {
   c();
   function c() {
@@ -158,11 +159,12 @@ function a() {
 }
 var b = 10;
 a();
-
+```
 
 👉 Nested function c కూడా global scope లోని b యాక్సెస్ చేసింది.
 
 # 📌 Example 3: Local Variable Overrides Global
+```js
 function a() {
   c();
   function c() {
@@ -172,11 +174,12 @@ function a() {
 }
 var b = 10;
 a();
-
+```
 
 👉 Local variable b = 100 ఉండటంతో అది global b = 10 ని override చేసింది.
 
 # 📌 Example 4: Function Local Variable Not Accessible Outside
+```js
 function a() {
   var b = 10;
   c();
@@ -186,7 +189,7 @@ function a() {
 }
 a();
 console.log(b); // ❌ ReferenceError
-
+```
 
 👉 Function లో ఉన్న b ని బయట నుండి యాక్సెస్ చేయలేం.
 
@@ -204,17 +207,17 @@ Global variable ను function యాక్సెస్ చేయగలదు �
 
 ## 🎯 Interview Questions & Answers (తెలుగులో)
 
-# Q1. Scope అంటే ఏమిటి?
+**Q1. Scope అంటే ఏమిటి?**
 👉 ఒక variable లేదా function ని ఎక్కడ ఉపయోగించగలమో దానినే Scope అంటారు.
 
-# Q2. Lexical Environment అంటే ఏమిటి?
+**Q2. Lexical Environment అంటే ఏమిటి?**
 👉 Local memory + parent reference కలిపిందే Lexical Environment.
 
-# Q3. Scope Chain ఎలా పనిచేస్తుంది?
+**Q3. Scope Chain ఎలా పనిచేస్తుంది?**
 👉 JS మొదట local scope లో వెతుకుతుంది → parent scope → చివరగా global scope.
 
-# Q4. Local మరియు Global variable conflict వస్తే ఏది ప్రాధాన్యం?
+ **Q4. Local మరియు Global variable conflict వస్తే ఏది ప్రాధాన్యం?**
 👉 Local variable ఎప్పుడూ priority పొందుతుంది.
 
-# Q5. Global Execution Context కి local variables యాక్సెస్ అవుతాయా?
+ **Q5. Global Execution Context కి local variables యాక్సెస్ అవుతాయా?**
 👉 ❌ కాదు. Local variables బయట నుండి యాక్సెస్ చేయలేము.
