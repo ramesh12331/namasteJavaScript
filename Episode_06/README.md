@@ -1,4 +1,6 @@
 Undefined vs Not Defined in JavaScript
+
+
 📌 What is undefined?
 
 During the memory allocation phase, JavaScript assigns each declared variable a placeholder called undefined.
@@ -149,3 +151,4 @@ Q5. ఒక variable declare అయి కానీ value assign చేయకప�
 
 Q6. అసలు declare కాలేని variable access చేస్తే ఏమవుతుంది?
 👉 ReferenceError: variable is not defined వస్తుంది.
+
