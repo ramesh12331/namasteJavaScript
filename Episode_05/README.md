@@ -1,56 +1,66 @@
-Shortest JS Program, Global Object & this Keyword
-📌 Overview
+cat << 'EOF' > README.md
+# Shortest JS Program, Global Object & this Keyword
 
-Even an empty JavaScript file does a lot behind the scenes. The JS engine automatically sets up:
+## 📌 Overview
+Even an **empty JavaScript file** executes something behind the scenes.  
+The JavaScript Engine automatically creates:  
+- **Global Execution Context (GEC)** → Memory + Execution environment.  
+- **Global Object** → `window` (browser), `global` (Node.js).  
+- **this keyword** → At global level, points to the global object.  
 
-Global Execution Context (GEC) – Memory allocation and execution environment.
+---
 
-Global Object – In browsers, this is window; in Node.js, it’s global.
+## 📌 Key Points
+- **Global Object** contains built-in functions & variables accessible anywhere.  
+- **Global Variables (var)** declared in global scope are attached to the global object.  
 
-this keyword – At the global level, this points to the global object.
-
-📌 Key Points
-
-Global Object contains many built-in functions and variables accessible anywhere.
-
-Global Variables declared using var are attached to the global object.
-```js
+### Example
+\`\`\`js
 var x = 10;
 
 console.log(x);         // 10
 console.log(this.x);    // 10
-console.log(window.x);  // 10
-```
+console.log(window.x);  // 10  (in browser)
+\`\`\`
 
-At the global level:
+👉 At global level:  
+\`\`\`js
+this === window   // true (in browser)
+\`\`\`
 
-this === window // true (in browser)
+👉 In Node.js:  
+- Global object is \`global\` instead of \`window\`.
 
+---
 
-In Node.js, the global object is global instead of window.
-📌 Summary
+## 📌 Summary
 
-| Concept             | Explanation                                                                       |
-| ------------------- | --------------------------------------------------------------------------------- |
-| Shortest JS program | Can be an empty file. JS engine creates GEC, global object, and `this`.           |
-| Global Object       | Holds all global variables and functions. Browser → `window`, Node.js → `global`. |
-| `this` keyword      | Refers to the global object in the global scope.                                  |
-| Global Variables    | Declared with `var` and automatically attached to the global object.              |
+| Concept            | Explanation |
+|--------------------|-------------|
+| Shortest JS Program | An empty file (JS engine still creates GEC, global object, this). |
+| Global Object      | Holds global variables & functions → \`window\` (browser), \`global\` (Node.js). |
+| this keyword       | Refers to the global object in global scope. |
+| Global Variables   | Declared with \`var\`, attached to global object. |
+| let & const        | Do **not** attach to global object. |
 
-📌 Interview Q&A
+---
 
-Q1: What is the shortest JS program?
-A: An empty file. Even then, JS engine creates GEC, global object, and this.
+## 🎯 Interview Q&A
 
-Q2: What is the global object in JavaScript?
-A: A built-in object that holds global variables and functions. window in browsers, global in Node.js.
+**Q1: What is the shortest JS program?**  
+👉 An empty file. JS engine still creates GEC, global object, and \`this\`.
 
-Q3: What does this refer to at the global level?
-A: It points to the global object (window in browsers).
+**Q2: What is the global object in JavaScript?**  
+👉 A built-in object holding global variables & functions. \`window\` in browsers, \`global\` in Node.js.
 
-Q4: Are global variables attached to the global object?
-A: Yes, variables declared using var in the global scope become properties of the global object.
+**Q3: What does \`this\` refer to at the global level?**  
+👉 It points to the global object (\`window\` in browsers).
 
-Q5: Does let or const attach variables to the global object?
-A: No, only var attaches variables to the global object at the global scope.
+**Q4: Are global variables attached to the global object?**  
+👉 Yes, if declared with \`var\`.
 
+**Q5: Does \`let\` or \`const\` attach variables to the global object?**  
+👉 No, only \`var\` attaches variables to the global object.
+
+---
+EOF
