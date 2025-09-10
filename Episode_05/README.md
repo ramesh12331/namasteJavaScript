@@ -15,18 +15,18 @@ The JavaScript Engine automatically creates:
 - **Global Variables (var)** declared in global scope are attached to the global object.  
 
 ### Example
-\`\`\`js
+```js
 var x = 10;
 
 console.log(x);         // 10
 console.log(this.x);    // 10
 console.log(window.x);  // 10  (in browser)
-\`\`\`
+```
 
 👉 At global level:  
-\`\`\`js
+```js
 this === window   // true (in browser)
-\`\`\`
+```
 
 👉 In Node.js:  
 - Global object is \`global\` instead of \`window\`.
@@ -64,3 +64,4 @@ this === window   // true (in browser)
 
 ---
 EOF
+
