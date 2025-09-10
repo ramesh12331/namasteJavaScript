@@ -1,32 +1,33 @@
-# JavaScript Execution Context
+# 📘 JavaScript Execution Context
 
-## Overview
+## 🔹 Overview
 Everything in JavaScript happens inside the **Execution Context**.  
 It acts like a container with two main components:
 
-1. **Memory Component (Variable Environment)**  
-   - Stores variables and functions in **key-value pairs**.  
-   - Responsible for memory allocation.  
+### 1. Memory Component (Variable Environment)
+- Stores variables and functions in key-value pairs.  
+- Responsible for memory allocation.  
 
-2. **Code Component (Thread of Execution)**  
-   - Executes the code **one line at a time**.  
-   - Handles the logic and instructions.  
+### 2. Code Component (Thread of Execution)
+- Executes the code one line at a time.  
+- Handles the logic and instructions.  
 
 ---
 
-## Key Concepts
+## 🔹 Key Concepts
+1. **Synchronous**  
+   - Code runs in a specific order, line by line.  
+   - Each statement waits for the previous one to finish.  
 
-### 1. Synchronous
-- Code runs in a **specific order**, line by line.  
-- Each statement waits for the previous one to finish.  
+2. **Single-Threaded**  
+   - JavaScript has one thread of execution.  
+   - It can handle only one command at a time.  
 
-### 2. Single-Threaded
-- JavaScript has **one thread of execution**.  
-- It can handle **only one command at a time**.  
+---
 
-## Execution Context Flow
+## 🔹 Execution Context Flow
 
-```text
+```
              +-------------------------+
              |   Execution Context      |
              +-------------------------+
@@ -41,9 +42,11 @@ It acts like a container with two main components:
    | & functions as   |     | line by line     |
    | key-value pairs  |     |                  |
    --------------------     --------------------
+```
+
 ---
 
-## Summary
+## 🔹 Summary
 - **Execution Context** = Memory Component + Code Component  
 - **Memory Component** = Variable Environment  
 - **Code Component** = Thread of Execution  
@@ -51,7 +54,7 @@ It acts like a container with two main components:
 
 ---
 
-## Interview Questions & Answers
+## 🔹 Interview Questions & Answers
 
 ### 1. What is an **Execution Context** in JavaScript?  
 An execution context is the environment in which JavaScript code is executed.  
@@ -108,5 +111,3 @@ JavaScript uses the **event loop**, **callback queue**, and **Web APIs** to hand
 - Code is executed line by line.  
 - Variables are assigned their actual values.  
 - Functions are executed when called.  
-
----
